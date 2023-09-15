@@ -163,7 +163,7 @@ def _doGetReqs(
 			)
 			response = request.json()
 			try:
-				for dependency in response["info"]["requires_dist"]:
+				for dependency in response["info"]["requires_dist"] or []:
 					update_dependencies(dependency)
 			except (KeyError, TypeError):
 				pass
