@@ -143,8 +143,8 @@ def _doGetReqs(
 	requirementsWithDeps = reqs.copy()
 
 	def update_dependencies(dependency: str) -> None:
-		dep = resolveReq(dependency, False)  #
-		req = resolveReq(requirement, False)  # httpx
+		dep = resolveReq(dependency, False)
+		req = resolveReq(requirement, False)
 		extra = resolveExtraReq(dependency)
 		if extra is not None:
 			if req in extrasReqs and extra in extrasReqs.get(req, []):
